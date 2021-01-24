@@ -18,11 +18,11 @@ jobs:
       - name: Build project # This would actually build your project, using zip for an example artifact
         run: yarn run export
       - name: Archive production artifacts
-          uses: actions/upload-artifact@v2
-          with:
-            name: out-dir
-            path: |
-              out
+        uses: actions/upload-artifact@v2
+        with:
+          name: out-dir
+          path: |
+            out
       - name: Zip artifacts
         run: |
           zip my-artifact ./out
