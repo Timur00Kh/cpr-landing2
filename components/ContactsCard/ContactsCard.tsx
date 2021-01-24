@@ -1,9 +1,13 @@
 import React from 'react';
 import classes from './ContactsCard.module.scss';
 
-export const ContactsCard: React.FC = () => {
+interface Props {
+  style?: React.CSSProperties;
+}
+
+export const ContactsCard: React.FC<Props> = ({ style }) => {
   return (
-    <div className={classes.contacts_card}>
+    <div style={style} className={classes.contacts_card}>
       <h3 className={classes.contacts_header}>КОНТАКТЫ</h3>
       <div className={classes.text_wrap}>
         <div className={classes.icon}>
