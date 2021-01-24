@@ -1,0 +1,8 @@
+@import 'styles/vars';
+
+.section9 {
+  display: none;
+  @media (max-width: $breakpoint) {
+    display: block;
+  }
+}

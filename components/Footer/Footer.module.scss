@@ -1,0 +1,47 @@
+@import 'styles/vars';
+
+.footer {
+  background: #101010;
+}
+
+.footer_inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1232px;
+  padding: 24px 16px;
+  margin: auto;
+
+  @media (max-width: $breakpoint) {
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+.icon_row {
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  &:not(:last-child) {
+    margin-right: 16px;
+  }
+}
+
+.footer_text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  text-align: right;
+
+  color: #7a7a7a;
+
+  @media (max-width: $breakpoint) {
+    margin-top: 24px;
+  }
+}
