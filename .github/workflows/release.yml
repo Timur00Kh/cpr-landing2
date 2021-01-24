@@ -13,13 +13,13 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - name: install depencies
+      - name: Install depencies
         run: yarn
       - name: Build project # This would actually build your project, using zip for an example artifact
         run: yarn run export
       - name: Zip artifacts
         run: |
-          zip --junk-paths out
+          zip --junk-paths out.zip ./out
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
