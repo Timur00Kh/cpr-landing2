@@ -2,6 +2,7 @@
 
 .third_section {
   margin-top: 210px;
+  overflow-x: hidden;
 
   @media (max-width: $breakpoint) {
     margin-top: 88px;
