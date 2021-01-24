@@ -17,10 +17,7 @@ export const SecondSection: React.FC = () => {
               src={item.img}
               alt={item.title}
             />
-            <h5
-              style={{ marginBottom: '28px', marginTop: '28px' }}
-              className={classes.second_section_item_header}
-            >
+            <h5 style={{ marginBottom: '28px', marginTop: '28px' }}>
               {item.title}
             </h5>
             <Button style={{ marginTop: 'auto' }} block>
