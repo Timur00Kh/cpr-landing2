@@ -1,0 +1,48 @@
+@import 'styles/vars';
+
+.sixth_section {
+  margin-top: 210px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  @media (max-width: $breakpoint) {
+    margin-top: 88px;
+  }
+}
+
+.subheader {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 40px;
+  /* identical to box height, or 167% */
+
+  text-align: center;
+
+  /* White */
+
+  color: #ffffff;
+}
+
+.svg_desktop {
+  display: flex;
+  margin-top: 68px;
+
+  svg {
+    width: 100%;
+  }
+
+  @media (max-width: $breakpoint) {
+    display: none;
+  }
+}
+
+.svg_mob {
+  display: none;
+  margin-top: 38px;
+
+  @media (max-width: $breakpoint) {
+    display: block;
+  }
+}
