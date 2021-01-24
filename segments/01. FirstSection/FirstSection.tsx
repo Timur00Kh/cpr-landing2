@@ -1,8 +1,5 @@
 import React from 'react';
 import { Input } from '@/components/Input/Input';
-import classes from './FirstSection.module.scss';
-import picture from './picture.png';
-import { Button } from '@/components/Button/Button';
 import {
   AndroidIcon,
   AppleIcon,
@@ -14,6 +11,9 @@ import {
   WindowsIcon,
   WorldSkillsCupIcon
 } from '@/components/icons';
+import { Button } from '@/components/Button/Button';
+import classes from './FirstSection.module.scss';
+import picture from './picture.png';
 
 export const FirstSection: React.FC = () => {
   return (
