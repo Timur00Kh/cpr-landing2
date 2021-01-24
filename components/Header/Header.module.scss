@@ -1,0 +1,78 @@
+@import 'styles/vars';
+
+.header {
+  height: 112px;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  //padding: 0 96px;
+  max-width: 1232px;
+  padding: 0 16px;
+  margin: auto;
+  background: #101010;
+  z-index: 99;
+
+  @media (max-width: $breakpoint) {
+    padding: 0 16px;
+  }
+}
+
+.icon_flex {
+  display: flex;
+  @media (max-width: 1075px) {
+    display: none;
+  }
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+  }
+}
+
+.icon_header {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 32px;
+  /* identical to box height, or 178% */
+
+  text-align: center;
+
+  /* White */
+
+  color: #ffffff;
+  white-space: nowrap;
+  margin-top: 7px;
+}
+
+.button_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 240px;
+}
+
+.number {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 40px;
+  /* identical to box height, or 167% */
+
+  display: flex;
+  align-items: center;
+
+  /* White */
+
+  color: #ffffff;
+  a {
+    color: #ffffff;
+  }
+}

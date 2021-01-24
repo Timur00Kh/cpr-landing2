@@ -1,0 +1,57 @@
+@import 'vars';
+
+@mixin stroke($width, $color) {
+  @supports (-webkit-text-stroke-color: green) {
+    text-shadow: 0 8px 10px rgba(118, 52, 255, 0.6);
+    //-webkit-text-stroke: #{$color} #{$width};
+    //font-size: 59px;
+  }
+  @supports (-webkit-text-stroke-color: green) {
+    text-shadow: 0 8px 10px rgba(118, 52, 255, 0.6),
+      #{$width} #{$width} #{$color}, -#{$width} #{$width} #{$color},
+      #{$width} -#{$width} #{$color}, -#{$width} -#{$width} #{$color},
+      #{$width} #{$width} 5px #{$color};
+  }
+}
+
+h1 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 52px;
+  line-height: 72px;
+  /* or 138% */
+
+  text-align: center;
+
+  color: #ffffff;
+  text-transform: uppercase;
+
+  $border-width: 3px;
+  @include stroke(3px, #8e4de1);
+
+  @media (max-width: $breakpoint) {
+    @include stroke(2px, #8e4de1);
+    font-size: 40px;
+    line-height: 56px;
+  }
+}
+
+h2 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 64px;
+  /* identical to box height, or 145% */
+
+  text-align: center;
+
+  /* White */
+
+  color: #ffffff;
+  @include stroke(2px, #8e4de1);
+
+  @media (max-width: $breakpoint) {
+    font-size: 32px;
+    line-height: 56px;
+  }
+}

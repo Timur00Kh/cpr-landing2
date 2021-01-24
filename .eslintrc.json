@@ -37,7 +37,9 @@
   "plugins": ["react", "react-hooks", "prettier"],
   "rules": {
     "comma-dangle": 0,
-    "prettier/prettier": "error",
+    "prettier/prettier":  ["error", {
+      "endOfLine":"auto"
+    }],
     "react/jsx-filename-extension": [
       1,
       {
@@ -50,7 +52,10 @@
     "@typescript-eslint/ban-ts-comment": "off",
     // https://stackoverflow.com/a/64024916/8217707
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/no-use-before-define": ["error", {
+      "classes": false,
+      "functions": false
+    }],
     // https://stackoverflow.com/a/59268871/8217707
     "import/extensions": [
       "error",
@@ -61,7 +66,9 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "react/require-default-props": "off",
+    "react/jsx-props-no-spreading": "off"
   },
   "ignorePatterns": ["node_modules", "build", "out", ".next"]
 }

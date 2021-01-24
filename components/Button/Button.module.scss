@@ -1,0 +1,35 @@
+.button {
+  padding: 8px;
+  /* Gradient */
+  background: linear-gradient(265.33deg, #8e4de1 0%, #4d5ce1 100%);
+  /* btn */
+  box-shadow: 0 8px 20px rgba(118, 52, 255, 0.48);
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 32px;
+  /* identical to box height, or 178% */
+
+  text-align: center;
+  text-transform: uppercase;
+
+  /* White */
+
+  color: #ffffff;
+  white-space: nowrap;
+  transform: scale(1);
+  transition: all 0.172s ease;
+
+  &:focus {
+    box-shadow: 0 8px 20px rgba(118, 52, 255, 0.7);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.block {
+  width: 100%;
+}

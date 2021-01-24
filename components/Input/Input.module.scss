@@ -1,0 +1,17 @@
+.input {
+  background: #1d1d1d;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 32px;
+  color: white;
+  padding: 8px 16px;
+  width: 100%;
+
+  &::placeholder {
+    /* identical to box height, or 178% */
+
+    color: #7a7a7a;
+  }
+}

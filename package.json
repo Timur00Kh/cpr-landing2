@@ -13,6 +13,7 @@
     ]
   },
   "scripts": {
+    "export": "next build && next export",
     "d": "export BUILD_ENV=development && next dev",
     "dev": "next dev",
     "build": "next build",
@@ -23,6 +24,7 @@
   "dependencies": {
     "@moxy/next-layout": "^2.2.2",
     "@reduxjs/toolkit": "^1.5.0",
+    "classnames": "^2.2.6",
     "next": "10.0.3",
     "next-images": "^1.6.2",
     "react": "17.0.1",
