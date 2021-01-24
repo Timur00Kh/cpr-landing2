@@ -4,6 +4,12 @@
   height: 112px;
   position: sticky;
   top: 0;
+
+  background: #101010;
+  z-index: 99;
+}
+
+.header_inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,12 +17,6 @@
   max-width: 1232px;
   padding: 0 16px;
   margin: auto;
-  background: #101010;
-  z-index: 99;
-
-  @media (max-width: $breakpoint) {
-    padding: 0 16px;
-  }
 }
 
 .icon_flex {
