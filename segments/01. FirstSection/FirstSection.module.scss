@@ -78,6 +78,8 @@
   @media (max-width: $breakpoint) {
     margin-top: 8px;
     flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   & > div {
@@ -87,13 +89,14 @@
     padding: 50px 22px 32px;
     flex: 1 1 33.33333%;
     flex-direction: column;
-    margin: 8px;
+    margin: 0 8px;
 
     @media (max-width: $breakpoint) {
       flex-direction: row;
       padding: 24px;
-      align-items: start;
+      align-items: center;
       justify-content: start;
+      margin: 8px 0;
     }
 
     background: #030303;
