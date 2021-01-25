@@ -1,6 +1,11 @@
 @import 'styles/vars';
 
 .section9 {
+  margin-top: 210px;
+
+  @media (max-width: $breakpoint) {
+    margin-top: 88px;
+  }
 }
 
 .contacts_mob {

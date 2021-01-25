@@ -6,12 +6,14 @@ import { FourthAndFifthSection } from '@/segments/04. FourthAndFithSection/Fourt
 import { SixthSection } from '@/segments/06. SixthSection/SixthSection';
 import { NinthSection } from '@/segments/09. NinethSection/NinthSection';
 import { SeventhSection } from '@/segments/07. SeventhSection/SeventhSection';
+import { EighthSection } from '@/segments/08. EighthSection/EighthSection';
 
 export default function Home(): JSX.Element {
   return (
     <>
       <FirstSection /> <SecondSection /> <ThirdSections />{' '}
-      <FourthAndFifthSection /> <SixthSection /> <SeventhSection />
+      <FourthAndFifthSection /> <SixthSection /> <SeventhSection />{' '}
+      <EighthSection />
     </>
   );
 }
