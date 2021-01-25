@@ -1,6 +1,5 @@
 <?php
-//$to = "info@cpr-team.ru" ;
-$to = "newt300@mail.ru" ;
+$to = "info@cpr-team.ru" ;
 $landingUrl = 'cpr-team.com';
 $headers = "From: landing@$landingUrl";
 
