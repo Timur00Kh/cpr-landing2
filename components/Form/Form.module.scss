@@ -1,0 +1,28 @@
+@import 'styles/vars';
+
+.form_wrap {
+  background: #030303;
+  border: 6px solid #8e4de1;
+  box-sizing: border-box;
+  padding: 26px 32px;
+  max-width: 480px;
+
+  @media (max-width: $breakpoint) {
+    order: 2;
+    max-width: unset;
+    width: calc(100% + 32px);
+    margin: 8px -16px;
+  }
+}
+
+.form_header {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 40px;
+  /* identical to box height, or 133% */
+
+  /* White */
+
+  color: #ffffff;
+}

@@ -18,6 +18,10 @@
   @media (max-width: $breakpoint) {
     background-position: 45% center;
   }
+
+  @media (min-width: 1200px) {
+    background-position: 45% center;
+  }
 }
 
 .map_inner {

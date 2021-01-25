@@ -14,28 +14,13 @@ import {
 import { Button } from '@/components/Button/Button';
 import classes from './FirstSection.module.scss';
 import picture from './picture.png';
+import { Form } from '@/components/Form/Form';
 
 export const FirstSection: React.FC = () => {
   return (
     <section className={classes.section}>
       <div className={classes.second_div}>
-        <div className={classes.form_wrap}>
-          <h3 className={classes.form_header}>Заявка на проект</h3>
-          <Input style={{ marginTop: '30px' }} type="text" placeholder="Имя*" />
-          <Input
-            style={{ marginTop: '30px' }}
-            type="tel"
-            placeholder="Электронная почта*"
-          />
-          <Input
-            style={{ marginTop: '30px' }}
-            type="email"
-            placeholder="Имя*"
-          />
-          <Button style={{ marginTop: '30px' }} block>
-            Получить предложение
-          </Button>
-        </div>
+        <Form className={classes.form_wrap} />
         <div style={{ width: '100%' }}>
           <img className={classes.vr_woman} src={picture} alt="vr_woman" />
           <div className={classes.div_in_second_div}>

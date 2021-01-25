@@ -1,7 +1,6 @@
 import React from 'react';
 import { ContactsCard } from '@/components/ContactsCard/ContactsCard';
 import classes from './NinethSection.module.scss';
-import map from './map.png';
 
 export const NinthSection: React.FC = () => {
   return (
