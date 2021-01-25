@@ -17,10 +17,12 @@
   max-width: 1232px;
   padding: 0 16px;
   margin: auto;
+  height: 100%;
 }
 
 .icon_flex {
   display: flex;
+  align-items: center;
   @media (max-width: 1075px) {
     display: none;
   }
@@ -30,7 +32,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 20px;
+    margin: 8px 20px 0;
   }
 }
 
