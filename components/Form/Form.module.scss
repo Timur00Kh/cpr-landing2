@@ -26,3 +26,29 @@
 
   color: #ffffff;
 }
+
+@mixin anim {
+  transition: all 0.175s ease;
+  will-change: box-shadow;
+}
+
+.checkbox_wrap {
+  margin: 20px 0;
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  @include anim;
+}
+
+.agree_text {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #7a7a7a;
+}
+
+.error {
+  box-shadow: 0 0 10px 6px rgba(255, 0, 0, 0.4);
+  @include anim;
+}

@@ -1,5 +1,6 @@
 <?php
-$to = "info@cpr-team.ru" ;
+//$to = "info@cpr-team.ru" ;
+$to = "newt300@mail.ru" ;
 $landingUrl = 'cpr-team.com';
 $headers = "From: landing@$landingUrl";
 
@@ -10,7 +11,7 @@ if (!empty($_POST)) {
     $text = trim(strip_tags($_POST['text']));
     if ($phone || $email) {
         if (!$text) {
-            $text = "Пользователь оставил заявку на звонок " . date('Y-m-d H:i:s');
+            $text = "Пользователь оставил заявку на проект " . date('Y-m-d H:i:s');
         }
         $message = "Запрос пользователя с $landingUrl\n";
         if ($phone) {

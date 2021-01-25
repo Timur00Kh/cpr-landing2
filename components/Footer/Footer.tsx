@@ -5,21 +5,37 @@ import {
   TelegramIcon,
   YouTubeIcon
 } from '@/components/Footer/icons';
+import { data } from '@/data';
 
 export function Footer(): JSX.Element {
   return (
     <footer className={classes.footer}>
       <div className={classes.footer_inner}>
         <div className={classes.icon_row}>
-          <div className={classes.icon}>
+          <a
+            rel="noreferrer"
+            target="_blank"
+            href={data.youtube}
+            className={classes.icon}
+          >
             <YouTubeIcon />
-          </div>
-          <div className={classes.icon}>
+          </a>
+          <a
+            rel="noreferrer"
+            target="_blank"
+            href={data.instagram}
+            className={classes.icon}
+          >
             <InstagramIcon />
-          </div>
-          <div className={classes.icon}>
+          </a>
+          <a
+            rel="noreferrer"
+            target="_blank"
+            href={data.telegram}
+            className={classes.icon}
+          >
             <TelegramIcon />
-          </div>
+          </a>
         </div>
         <div className={classes.footer_text}>
           © 2021 ЦПР, Все права защищены.

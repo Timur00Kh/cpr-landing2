@@ -1,0 +1,19 @@
+@mixin anim {
+  transition: stroke-dashoffset 0.175s ease;
+  will-change: stroke-dashoffset;
+}
+.checked {
+  path {
+    stroke-dasharray: 24;
+    stroke-dashoffset: 0;
+    @include anim;
+  }
+}
+
+.unchecked {
+  path {
+    stroke-dasharray: 24;
+    stroke-dashoffset: 24;
+    @include anim;
+  }
+}

@@ -8,6 +8,7 @@ interface Props {
   href?: string;
   className?: string;
   style?: React.CSSProperties;
+  onClick?: (e: React.MouseEvent) => void;
 }
 
 export const Button: React.FC<Props> = ({
@@ -16,12 +17,14 @@ export const Button: React.FC<Props> = ({
   tag = 'button',
   href,
   className,
-  style
+  style,
+  onClick
 }) => {
   switch (tag) {
     case 'a':
       return (
         <a
+          onClick={onClick}
           style={style}
           href={href}
           className={cn(classes.button, className, {
@@ -35,6 +38,7 @@ export const Button: React.FC<Props> = ({
     default:
       return (
         <button
+          onClick={onClick}
           style={style}
           type="button"
           className={cn(classes.button, className, {
