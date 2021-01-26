@@ -27,42 +27,37 @@ export const EighthSection: React.FC = () => {
 
   const settings = {
     centerMode: true,
-    // dots: true,
-    // dotsScroll: 2,
-    // gutter: 30,
     slidesToShow: screenWidth > 900 ? 3 : 1
   };
-
-  if (!showSlider) {
-    return '';
-  }
 
   return (
     <section className={classes.section8}>
       <h2>ПАРТНЕРЫ</h2>
-      {/* @ts-ignore */}
-      <Slider {...settings} className={classes.slider}>
-        <div>
-          <div className={classes.logo_wrap}>
-            <img src={img1} alt="a" />
+      {showSlider && (
+        // @ts-ignore
+        <Slider {...settings} className={classes.slider}>
+          <div>
+            <div className={classes.logo_wrap}>
+              <img src={img1} alt="a" />
+            </div>
           </div>
-        </div>
-        <div>
-          <div className={classes.logo_wrap}>
-            <img src={img2} alt="a" />
+          <div>
+            <div className={classes.logo_wrap}>
+              <img src={img2} alt="a" />
+            </div>
           </div>
-        </div>
-        <div>
-          <div className={classes.logo_wrap}>
-            <img src={img3} alt="a" />
+          <div>
+            <div className={classes.logo_wrap}>
+              <img src={img3} alt="a" />
+            </div>
           </div>
-        </div>
-        <div>
-          <div className={classes.logo_wrap}>
-            <img src={img4} alt="a" />
+          <div>
+            <div className={classes.logo_wrap}>
+              <img src={img4} alt="a" />
+            </div>
           </div>
-        </div>
-      </Slider>
+        </Slider>
+      )}
     </section>
   );
 };
