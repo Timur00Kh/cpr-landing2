@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, ModalBody } from 'reactstrap';
+import { Modal } from 'reactstrap';
 import cn from 'classnames';
 import classes from './CommonModal.module.scss';
 
