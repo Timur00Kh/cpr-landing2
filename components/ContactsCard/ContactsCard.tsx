@@ -20,7 +20,9 @@ export const ContactsCard: React.FC<Props> = ({ style }) => {
         <div className={classes.icon}>
           <PhoneIcon />
         </div>
-        <div className={classes.text}>{data.phone}</div>
+        <a href={`tel:${data.phone_plain}`} className={classes.text}>
+          {data.phone}
+        </a>
       </div>
     </div>
   );
