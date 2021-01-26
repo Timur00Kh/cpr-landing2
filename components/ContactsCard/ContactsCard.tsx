@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './ContactsCard.module.scss';
+import { data } from '@/data';
 
 interface Props {
   style?: React.CSSProperties;
@@ -13,16 +14,13 @@ export const ContactsCard: React.FC<Props> = ({ style }) => {
         <div className={classes.icon}>
           <PinIcon />
         </div>
-        <div className={classes.text}>
-          г. Казань ул. Петербургская д. 52 IT PARK (технопарк в сфере высоких
-          технолоогий)
-        </div>
+        <div className={classes.text}>{data.address}</div>
       </div>
       <div className={classes.text_wrap}>
         <div className={classes.icon}>
           <PhoneIcon />
         </div>
-        <div className={classes.text}>8 800 7777777</div>
+        <div className={classes.text}>{data.phone}</div>
       </div>
     </div>
   );

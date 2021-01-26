@@ -1,5 +1,7 @@
 export const data = {
   phone: '8 800 100-32-87',
+  address:
+    'г. Казань ул. Петербургская д. 52 IT PARK (технопарк в сфере высоких технолоогий)',
   phone_plain: '+78001003287',
   title: 'Разработка виртуальной и дополненной реальности',
   instagram: 'https://www.instagram.com/cpr.tech.team',

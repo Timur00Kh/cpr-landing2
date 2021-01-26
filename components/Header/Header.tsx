@@ -6,11 +6,10 @@ import {
   PrepaymentIcon
 } from '@/components/icons';
 import { Button } from '@/components/Button/Button';
+import { data } from '@/data';
 import classes from './Header.module.scss';
 
 export function Header(): JSX.Element {
-  const phone = '8 800 7777777';
-
   return (
     <header className={classes.header}>
       <div className={classes.header_inner}>
@@ -31,7 +30,7 @@ export function Header(): JSX.Element {
         </div>
         <div className={classes.button_wrapper}>
           <h5 className={classes.number}>
-            <a href={`tel:${phone.replace(' ', '')}`}>8 800 7777777</a>
+            <a href={`tel:${data.phone_plain}`}>{data.phone}</a>
           </h5>
           <Button block>заказать звонок</Button>
         </div>
