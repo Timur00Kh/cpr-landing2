@@ -6,13 +6,6 @@
   box-sizing: border-box;
   padding: 26px 32px;
   max-width: 480px;
-
-  @media (max-width: $breakpoint) {
-    order: 2;
-    max-width: unset;
-    width: calc(100% + 32px);
-    margin: 8px -16px;
-  }
 }
 
 .form_header {

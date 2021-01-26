@@ -1,0 +1,9 @@
+.common_modal {
+  max-width: 480px;
+
+  :global {
+    .modal-dialog {
+      max-width: 480px;
+    }
+  }
+}

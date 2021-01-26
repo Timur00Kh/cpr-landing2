@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { secondSectionItems } from '@/segments/02. SecondSection/items';
 import { Button } from '@/components/Button/Button';
+import { ModalContext } from '@/pages';
 import classes from './SecondSection.module.scss';
 
 export const SecondSection: React.FC = () => {
+  const [, setModal] = useContext(ModalContext);
   return (
     <section className={classes.second_section}>
       <div className={classes.header_wrap}>
@@ -20,7 +22,11 @@ export const SecondSection: React.FC = () => {
             <h5 style={{ marginBottom: '28px', marginTop: '28px' }}>
               {item.title}
             </h5>
-            <Button style={{ marginTop: 'auto' }} block>
+            <Button
+              onClick={() => setModal({ orderProj: true })}
+              style={{ marginTop: 'auto' }}
+              block
+            >
               Узнать больше
             </Button>
           </div>

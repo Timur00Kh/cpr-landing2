@@ -3,6 +3,11 @@
 @import 'fonts';
 @import 'typography';
 
+@import '~bootstrap/scss/bootstrap-grid';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/transitions';
+@import '~bootstrap/scss/modal';
+
 body {
   font-family: Gilroy, sans-serif;
   font-weight: 400;

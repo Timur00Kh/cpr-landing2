@@ -30,7 +30,7 @@ export const Form: React.FC<Props> = ({ style, className }) => {
   const [id, setId] = useState(tempId);
   const [formData, setFormData] = useReducer(
     (s: FormData, a: FormData) => ({ ...s, ...a }),
-    {}
+    { name: '', email: '', phone: '', agree: false }
   );
   const [focusedOnce, setFocusedOnce] = useReducer(
     (s: FormDataFocused, a: FormDataFocused) => ({ ...s, ...a }),
@@ -58,7 +58,7 @@ export const Form: React.FC<Props> = ({ style, className }) => {
   }, [formData]);
 
   return (
-    <div style={style} className={cn(classes.form_wrap, className)}>
+    <div style={style} className={cn(className, classes.form_wrap)}>
       <h3 className={classes.form_header}>Заявка на проект</h3>
       <Input
         error={!formData.name && focusedOnce.name}

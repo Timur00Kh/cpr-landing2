@@ -11,10 +11,9 @@ import {
   WindowsIcon,
   WorldSkillsCupIcon
 } from '@/components/icons';
-import { Button } from '@/components/Button/Button';
+import { Form } from '@/components/Form/Form';
 import classes from './FirstSection.module.scss';
 import picture from './picture.png';
-import { Form } from '@/components/Form/Form';
 
 export const FirstSection: React.FC = () => {
   return (

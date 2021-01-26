@@ -14,7 +14,7 @@ export const SeventhSection: React.FC = () => {
           <img className={classes.section7_img} src={img} alt="Hand shaking" />
         </div>
         <div className={classes.section7_item}>
-          <Form />
+          <Form className={classes.form} />
         </div>
       </div>
     </section>
