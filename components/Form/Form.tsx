@@ -43,8 +43,6 @@ export const Form: React.FC<Props> = ({ style, className }) => {
   }, []);
 
   const onClick = useCallback(async () => {
-    setFocusedOnce({ name: true, agree: true, email: true, phone: true });
-
     if (formData.agree && formData.name && formData.phone && formData.email) {
       const res = await sendForm(formData.name, formData.email, formData.phone);
       if (res.ok) {
@@ -52,13 +50,14 @@ export const Form: React.FC<Props> = ({ style, className }) => {
         setFocusedOnce({});
         setFormData({});
       } else {
+        setFocusedOnce({ name: true, agree: true, email: true, phone: true });
         alert(`Ошибка! \n${JSON.stringify(res)}`);
       }
     }
   }, [formData]);
 
   return (
-    <div style={style} className={cn(className, classes.form_wrap)}>
+    <form style={style} className={cn(className, classes.form_wrap)}>
       <h3 className={classes.form_header}>Заявка на проект</h3>
       <Input
         error={!formData.name && focusedOnce.name}
@@ -112,7 +111,7 @@ export const Form: React.FC<Props> = ({ style, className }) => {
       <Button onClick={onClick} block>
         Получить предложение
       </Button>
-    </div>
+    </form>
   );
 };
 

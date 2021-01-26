@@ -1,9 +1,11 @@
-import React from 'react';
-import classes from './ThirdSections.module.scss';
+import React, { useContext } from 'react';
 import { thirdSectionItems } from '@/segments/03. ThirdSections/items';
 import { Button } from '@/components/Button/Button';
+import { ModalContext } from '@/layouts/PrimaryLayout';
+import classes from './ThirdSections.module.scss';
 
 export const ThirdSections: React.FC = () => {
+  const [, setModal] = useContext(ModalContext);
   return (
     <section className={classes.third_section}>
       <div className={classes.header_wrap}>
@@ -22,7 +24,9 @@ export const ThirdSections: React.FC = () => {
       </div>
       <div className={classes.button_wrap}>
         <div>
-          <Button block>Получить консультацию</Button>
+          <Button onClick={() => setModal({ orderCall: true })} block>
+            Получить консультацию
+          </Button>
         </div>
       </div>
     </section>

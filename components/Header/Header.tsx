@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   FreeIcon,
   GuaranteeIcon,
@@ -7,9 +7,12 @@ import {
 } from '@/components/icons';
 import { Button } from '@/components/Button/Button';
 import { data } from '@/data';
+import { ModalContext } from '@/layouts/PrimaryLayout';
 import classes from './Header.module.scss';
 
 export function Header(): JSX.Element {
+  const [, setModal] = useContext(ModalContext);
+
   return (
     <header className={classes.header}>
       <div className={classes.header_inner}>
@@ -32,7 +35,9 @@ export function Header(): JSX.Element {
           <h5 className={classes.number}>
             <a href={`tel:${data.phone_plain}`}>{data.phone}</a>
           </h5>
-          <Button block>заказать звонок</Button>
+          <Button onClick={() => setModal({ orderCall: true })} block>
+            заказать звонок
+          </Button>
         </div>
       </div>
     </header>

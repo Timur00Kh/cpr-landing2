@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { secondSectionItems } from '@/segments/02. SecondSection/items';
 import { Button } from '@/components/Button/Button';
-import { ModalContext } from '@/pages';
+import { ModalContext } from '@/layouts/PrimaryLayout';
 import classes from './SecondSection.module.scss';
 
 export const SecondSection: React.FC = () => {
