@@ -50,7 +50,7 @@ export const Form: React.FC<Props> = ({ style, className }) => {
         setFocusedOnce({});
         setFormData({});
       } else {
-        alert(`Ошибка! \n${JSON.stringify(res)}`);
+        alert(`Ошибка!`);
       }
     } else {
       setFocusedOnce({ name: true, agree: true, email: true, phone: true });

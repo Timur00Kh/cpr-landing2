@@ -1,9 +1,11 @@
-import React, { useCallback, useReducer } from 'react';
+import React, { useCallback, useReducer, useState } from 'react';
 import { Button } from '@/components/Button/Button';
 import { Input } from '@/components/Input/Input';
 import { Checkbox } from '@/components/Checkbox/Checkbox';
 import cn from 'classnames';
 import classes from './CallForm.module.scss';
+import { AnimatedCheckbox } from '@/components/AnimatedCheckbox/AnimatedCheckbox';
+import { CommonModal } from '@/components/CommonModal/CommonModal';
 
 let tempId = 0;
 
@@ -19,6 +21,8 @@ interface FocusedOnce {
 
 export const CallForm: React.FC = () => {
   tempId += 1;
+
+  const [step, setStep] = useState<1 | 2>(1);
 
   const [data, setData] = useReducer(
     (s: FormData, a: FormData) => ({ ...s, ...a }),
@@ -40,12 +44,29 @@ export const CallForm: React.FC = () => {
         setFocusedOnce({ agree: true, phone: true });
         alert(`Ошибка! \n${JSON.stringify(res)}`);
       }
+      setStep(2);
     } else {
       setFocusedOnce({ phone: true, agree: true });
     }
   }, [data]);
 
   const nextWordDay = getNextWork(new Date());
+
+  if (step === 2) {
+    return (
+      <form className={classes.call_form}>
+        <div className={classes.success_inner}>
+          <div>
+            <h3 className={classes.header}>Заявка отправлена</h3>
+          </div>
+          <div>
+            <AnimatedCheckbox />
+          </div>
+          <Button block>Закрыть</Button>
+        </div>
+      </form>
+    );
+  }
 
   return (
     <form className={classes.call_form}>

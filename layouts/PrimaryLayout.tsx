@@ -6,6 +6,7 @@ import { CommonModal } from '@/components/CommonModal/CommonModal';
 import { Form } from '@/components/Form/Form';
 import { CallForm } from '@/components/CallForm/CallForm';
 import classes from './PrimaryLayout.module.scss';
+import { AnimatedCheckbox } from '@/components/AnimatedCheckbox/AnimatedCheckbox';
 
 interface IPrimaryLayoutProps {
   children?: JSX.Element;
