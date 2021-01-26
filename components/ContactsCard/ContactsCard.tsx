@@ -1,6 +1,6 @@
 import React from 'react';
-import classes from './ContactsCard.module.scss';
 import { data } from '@/data';
+import classes from './ContactsCard.module.scss';
 
 interface Props {
   style?: React.CSSProperties;
