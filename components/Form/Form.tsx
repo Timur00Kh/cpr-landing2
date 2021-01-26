@@ -30,7 +30,7 @@ export const Form: React.FC<Props> = ({ style, className }) => {
   const [id, setId] = useState(tempId);
   const [formData, setFormData] = useReducer(
     (s: FormData, a: FormData) => ({ ...s, ...a }),
-    { name: '', email: '', phone: '', agree: false }
+    { name: '', email: '', phone: '', agree: true }
   );
   const [focusedOnce, setFocusedOnce] = useReducer(
     (s: FormDataFocused, a: FormDataFocused) => ({ ...s, ...a }),

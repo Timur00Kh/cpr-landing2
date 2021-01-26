@@ -22,7 +22,7 @@ export const CallForm: React.FC = () => {
 
   const [data, setData] = useReducer(
     (s: FormData, a: FormData) => ({ ...s, ...a }),
-    { phone: '', agree: false }
+    { phone: '', agree: true }
   );
   const [focusedOnce, setFocusedOnce] = useReducer(
     (s: FocusedOnce, a: FocusedOnce) => ({ ...s, ...a }),
