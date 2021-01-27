@@ -88,7 +88,7 @@ export function Footer(): JSX.Element {
             <TelegramIcon />
           </a>
         </div>
-        <div>
+        <div className={classes.policy_b_wrap}>
           <Link href="[[...slug]]" as="/policy" scroll={false} replace>
             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a className={classes.policy_b}>Политика конфиденциальности</a>

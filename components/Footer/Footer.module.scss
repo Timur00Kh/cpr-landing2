@@ -50,6 +50,15 @@
   background: white;
   padding: 8px;
 
+  color: black;
+
+  &:active,
+  &:visited {
+    color: black;
+  }
+}
+
+.policy_b_wrap {
   @media (max-width: $breakpoint) {
     margin-top: 24px;
   }
