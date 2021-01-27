@@ -63,7 +63,7 @@ export const CallForm: React.FC = () => {
 
   return (
     <form className={classes.call_form}>
-      <h3 className={classes.header}>Заявка на проект</h3>
+      <h3 className={classes.header}>Заявка на звонок</h3>
       <p className={classes.text}>
         Оставьте свой номер, и мы перезвоним вам и ответим на любые вопросы.
       </p>
