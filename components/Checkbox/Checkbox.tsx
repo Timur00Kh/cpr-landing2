@@ -23,7 +23,7 @@ export const Checkbox: React.FC<Props> = ({
       <input {...props} id={id} type="checkbox" style={{ display: 'none' }} />
       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
       <label
-        className={cn(className, {
+        className={cn(className, classes.checkbox, {
           [classes.checked]: checked,
           [classes.unchecked]: !checked
         })}

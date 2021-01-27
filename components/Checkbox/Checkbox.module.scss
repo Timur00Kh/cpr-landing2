@@ -2,6 +2,11 @@
   transition: stroke-dashoffset 0.175s ease;
   will-change: stroke-dashoffset;
 }
+
+.checkbox {
+  cursor: pointer;
+}
+
 .checked {
   path {
     stroke-dasharray: 24;
