@@ -47,7 +47,7 @@ export const CallForm: React.FC = () => {
         ).toLocaleDateString()} в ${data.hour} часов ${data.minute} минут`
       );
       if (res.ok) {
-        setFocusedOnce({});
+        setFocusedOnce({ phone: false, agree: false });
         setData(defaultData);
         setModal({ success: true, orderCall: false });
       } else {

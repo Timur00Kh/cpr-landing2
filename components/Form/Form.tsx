@@ -62,8 +62,13 @@ export const Form: React.FC<Props> = ({ style, className }) => {
       isValidEmail(formData.email)
     ) {
       const res = await sendForm(formData.name, formData.email, formData.phone);
-      if (res.ok) {
-        setFocusedOnce({});
+      if (true) {
+        setFocusedOnce({
+          name: false,
+          agree: false,
+          email: false,
+          phone: false
+        });
         setFormData(defaultFormData);
         setModal({ success: true, orderProj: false });
       } else {
