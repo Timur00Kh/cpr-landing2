@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useReducer, useState } from 'react';
+import React from 'react';
 import { FirstSection } from '@/segments/01. FirstSection/FirstSection';
 import { SecondSection } from '@/segments/02. SecondSection/SecondSection';
 import { ThirdSections } from '@/segments/03. ThirdSections/ThirdSections';
