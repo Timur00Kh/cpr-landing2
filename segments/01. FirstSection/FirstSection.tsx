@@ -25,7 +25,7 @@ export const FirstSection: React.FC = () => {
           <div className={classes.div_in_second_div}>
             <div>
               <WorldSkillsCupIcon />
-              <h6>Мы призеры World Skills</h6>
+              <h6>Мы — призеры World Skills</h6>
             </div>
             <div>
               <ExperienceIcon />

@@ -45,3 +45,20 @@
     margin-top: 24px;
   }
 }
+
+.policy_b {
+  background: white;
+  padding: 8px;
+
+  @media (max-width: $breakpoint) {
+    margin-top: 24px;
+  }
+}
+
+.policy_h {
+  color: #101010;
+}
+
+.policy_p {
+  margin-bottom: 16px;
+}

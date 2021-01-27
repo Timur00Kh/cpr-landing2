@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 // import { Slider } from '@/components/src';
-import img1 from '@/segments/08. EighthSection/images/buildar_logo.png';
+import img1 from '@/segments/08. EighthSection/images/buildar_logo2.png';
 import img2 from '@/segments/08. EighthSection/images/itpark_logo.png';
 import img3 from '@/segments/08. EighthSection/images/logo_dar.png';
 import img4 from '@/segments/08. EighthSection/images/logo_energo.png';
