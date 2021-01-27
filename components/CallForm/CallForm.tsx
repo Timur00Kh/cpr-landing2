@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useReducer } from 'react';
 import { Button } from '@/components/Button/Button';
-import { Input } from '@/components/Input/Input';
+import { Input, PhoneInput } from '@/components/Input/Input';
 import { Checkbox } from '@/components/Checkbox/Checkbox';
 import cn from 'classnames';
 import { ModalContext } from '@/layouts/PrimaryLayout';
@@ -23,13 +23,15 @@ interface FocusedOnce {
   agree?: boolean;
 }
 
+const defaultData = { phone: '', agree: true, hour: '09', minute: '00' };
+
 export const CallForm: React.FC = () => {
   tempId += 1;
   const [, setModal] = useContext(ModalContext);
 
   const [data, setData] = useReducer(
     (s: FormData, a: FormData) => ({ ...s, ...a }),
-    { phone: '', agree: true, hour: '09', minute: '00' }
+    defaultData
   );
   const [focusedOnce, setFocusedOnce] = useReducer(
     (s: FocusedOnce, a: FocusedOnce) => ({ ...s, ...a }),
@@ -37,7 +39,7 @@ export const CallForm: React.FC = () => {
   );
 
   const onClick = useCallback(async () => {
-    if (data.phone && data.agree) {
+    if (data.phone.length === 11 && data.agree) {
       const res = await sendForm(
         data.phone,
         `Предпочтительное время: ${getNextWork(
@@ -46,7 +48,7 @@ export const CallForm: React.FC = () => {
       );
       if (res.ok) {
         setFocusedOnce({});
-        setData({});
+        setData(defaultData);
         setModal({ success: true, orderCall: false });
       } else {
         setFocusedOnce({ agree: true, phone: true });
@@ -65,11 +67,12 @@ export const CallForm: React.FC = () => {
       <p className={classes.text}>
         Оставьте свой номер, и мы перезвоним вам и ответим на любые вопросы.
       </p>
-      <Input
+      <PhoneInput
+        error={data.phone.length < 11 && focusedOnce.phone}
         value={data.phone}
         onBlur={() => setFocusedOnce({ phone: true })}
-        error={!data.phone && focusedOnce.phone}
-        onChange={(e) => setData({ phone: e.target.value })}
+        // onChange={(e) => setData({ phone: e.target.value })}
+        onAccept={(e) => setData({ phone: e.unmaskedValue })}
         style={{ margin: '24px 0' }}
         type="tel"
         placeholder="Ваш номер телефона*"

@@ -1,4 +1,4 @@
-import { Input } from '@/components/Input/Input';
+import { Input, PhoneInput } from '@/components/Input/Input';
 import { Button } from '@/components/Button/Button';
 import React, {
   useCallback,
@@ -11,6 +11,7 @@ import cn from 'classnames';
 import { Checkbox } from '@/components/Checkbox/Checkbox';
 import classes from './Form.module.scss';
 import { ModalContext } from '@/layouts/PrimaryLayout';
+import { isValidEmail } from '@/data';
 
 let tempId = 0;
 
@@ -33,11 +34,13 @@ interface FormDataFocused {
   agree?: boolean;
 }
 
+const defaultFormData = { name: '', email: '', phone: '', agree: true };
+
 export const Form: React.FC<Props> = ({ style, className }) => {
   const [id, setId] = useState(tempId);
   const [formData, setFormData] = useReducer(
     (s: FormData, a: FormData) => ({ ...s, ...a }),
-    { name: '', email: '', phone: '', agree: true }
+    defaultFormData
   );
   const [focusedOnce, setFocusedOnce] = useReducer(
     (s: FormDataFocused, a: FormDataFocused) => ({ ...s, ...a }),
@@ -52,11 +55,16 @@ export const Form: React.FC<Props> = ({ style, className }) => {
   const [, setModal] = useContext(ModalContext);
 
   const onClick = useCallback(async () => {
-    if (formData.agree && formData.name && formData.phone && formData.email) {
+    if (
+      formData.agree &&
+      formData.name &&
+      formData.phone.length === 11 &&
+      isValidEmail(formData.email)
+    ) {
       const res = await sendForm(formData.name, formData.email, formData.phone);
       if (res.ok) {
         setFocusedOnce({});
-        setFormData({});
+        setFormData(defaultFormData);
         setModal({ success: true, orderProj: false });
       } else {
         alert(`Ошибка!`);
@@ -78,17 +86,18 @@ export const Form: React.FC<Props> = ({ style, className }) => {
         type="text"
         placeholder="Имя*"
       />
-      <Input
-        error={!formData.phone && focusedOnce.phone}
+      <PhoneInput
+        error={formData.phone.length < 11 && focusedOnce.phone}
         onBlur={() => setFocusedOnce({ phone: true })}
         value={formData.phone}
-        onChange={(e) => setFormData({ phone: e.currentTarget.value })}
+        // onChange={(e) => setFormData({ phone: e.currentTarget.value })}
+        onAccept={(e) => setFormData({ phone: e.unmaskedValue })}
         style={{ marginTop: '30px' }}
         type="tel"
         placeholder="Телефон*"
       />
       <Input
-        error={!formData.email && focusedOnce.email}
+        error={!isValidEmail(formData.email) && focusedOnce.email}
         onBlur={() => setFocusedOnce({ email: true })}
         value={formData.email}
         onChange={(e) => setFormData({ email: e.currentTarget.value })}
