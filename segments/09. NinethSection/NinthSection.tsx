@@ -10,7 +10,7 @@ export const NinthSection: React.FC = () => {
         <iframe
           className={classes.iframe}
           title="IT Park"
-          src={data.yamap_link}
+          src={data.yamap_iframe}
           width="100%"
           height="544"
           frameBorder="0"
