@@ -5,6 +5,8 @@ import { NinthSection } from '@/segments/09. NinethSection/NinthSection';
 import { CommonModal } from '@/components/CommonModal/CommonModal';
 import { Form } from '@/components/Form/Form';
 import { CallForm } from '@/components/CallForm/CallForm';
+import { AnimatedCheckbox } from '@/components/AnimatedCheckbox/AnimatedCheckbox';
+import { Button } from '@/components/Button/Button';
 import classes from './PrimaryLayout.module.scss';
 
 interface IPrimaryLayoutProps {
@@ -14,11 +16,13 @@ interface IPrimaryLayoutProps {
 interface ModalProps {
   orderProj?: boolean;
   orderCall?: boolean;
+  success?: boolean;
 }
 
 const defaultModalValue: ModalProps = {
   orderCall: false,
-  orderProj: false
+  orderProj: false,
+  success: false
 };
 
 // @ts-ignore
@@ -49,6 +53,24 @@ export function PrimaryLayout({ children }: IPrimaryLayoutProps): JSX.Element {
         toggle={() => setModal({ orderCall: !modal.orderCall })}
       >
         <CallForm />
+      </CommonModal>
+      <CommonModal
+        isOpen={modal.success}
+        toggle={() => setModal({ success: !modal.success })}
+      >
+        <form className={classes.success_form}>
+          <div className={classes.success_inner}>
+            <div>
+              <h3 className={classes.success_form_header}>Заявка отправлена</h3>
+            </div>
+            <div>
+              <AnimatedCheckbox />
+            </div>
+            <Button block onClick={() => setModal({ success: false })}>
+              Закрыть
+            </Button>
+          </div>
+        </form>
       </CommonModal>
     </ModalContext.Provider>
   );

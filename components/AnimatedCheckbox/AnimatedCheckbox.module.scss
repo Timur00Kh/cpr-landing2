@@ -1,0 +1,37 @@
+@mixin anim {
+  transition: stroke-dashoffset 0.175s ease;
+  transition-duration: 0.7s;
+  will-change: stroke-dashoffset;
+}
+
+.svg_start {
+  transform: scale(3);
+  //transform-origin: center top;
+  path:nth-child(2) {
+    @include anim;
+    stroke-dasharray: 24;
+    stroke-dashoffset: 24;
+  }
+
+  path:first-child {
+    @include anim;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+  }
+}
+
+.svg_end {
+  path:nth-child(2) {
+    @include anim;
+    stroke-dasharray: 24;
+    stroke-dashoffset: 0;
+    transition-delay: 1000ms;
+  }
+
+  path:first-child {
+    @include anim;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 0;
+    transition-delay: 800ms;
+  }
+}

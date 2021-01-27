@@ -14,7 +14,14 @@ export const ContactsCard: React.FC<Props> = ({ style }) => {
         <div className={classes.icon}>
           <PinIcon />
         </div>
-        <div className={classes.text}>{data.address}</div>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href={data.yamap_link}
+          className={classes.text}
+        >
+          {data.address}
+        </a>
       </div>
       <div className={classes.text_wrap}>
         <div className={classes.icon}>

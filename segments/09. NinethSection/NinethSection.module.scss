@@ -20,6 +20,7 @@
   height: 544px;
   background-image: url('./map.png');
   background-position: 70% center;
+  position: relative;
   @media (max-width: $breakpoint) {
     background-position: 45% center;
   }
@@ -43,4 +44,9 @@
   @media (max-width: $breakpoint) {
     display: none;
   }
+}
+
+.iframe {
+  position: absolute;
+  z-index: 0;
 }

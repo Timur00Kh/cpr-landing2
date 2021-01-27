@@ -9,6 +9,11 @@
 }
 
 .header_wrap {
+  margin-bottom: 47px;
+
+  @media (max-width: $breakpoint) {
+    margin-bottom: 24px;
+  }
 }
 
 .second_section_items {
