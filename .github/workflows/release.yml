@@ -19,7 +19,7 @@ jobs:
         run: yarn run export
       - name: Zip artifacts
         run: |
-          zip -rj my-artifact ./out
+          zip -r my-artifact ./out/*
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
