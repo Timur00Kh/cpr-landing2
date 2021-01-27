@@ -32,6 +32,11 @@
   margin: 0;
 }
 
+.time_pick_wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .hr {
   background: #373737;
   width: 100%;

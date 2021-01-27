@@ -1,18 +1,21 @@
-import React, { useCallback, useContext, useReducer, useState } from 'react';
+import React, { useCallback, useContext, useReducer } from 'react';
 import { Button } from '@/components/Button/Button';
 import { Input } from '@/components/Input/Input';
 import { Checkbox } from '@/components/Checkbox/Checkbox';
 import cn from 'classnames';
-import { AnimatedCheckbox } from '@/components/AnimatedCheckbox/AnimatedCheckbox';
-import { CommonModal } from '@/components/CommonModal/CommonModal';
 import { ModalContext } from '@/layouts/PrimaryLayout';
+import { Select } from '@/components/Select/Select';
 import classes from './CallForm.module.scss';
 
 let tempId = 0;
+const hours = generate(11, 9);
+const minutes = generate(61);
 
 interface FormData {
   phone?: string;
   agree?: boolean;
+  hour?: string;
+  minute?: string;
 }
 
 interface FocusedOnce {
@@ -26,7 +29,7 @@ export const CallForm: React.FC = () => {
 
   const [data, setData] = useReducer(
     (s: FormData, a: FormData) => ({ ...s, ...a }),
-    { phone: '', agree: true }
+    { phone: '', agree: true, hour: '09', minute: '00' }
   );
   const [focusedOnce, setFocusedOnce] = useReducer(
     (s: FocusedOnce, a: FocusedOnce) => ({ ...s, ...a }),
@@ -35,7 +38,12 @@ export const CallForm: React.FC = () => {
 
   const onClick = useCallback(async () => {
     if (data.phone && data.agree) {
-      const res = await sendForm(data.phone, 'Заявка на звонок');
+      const res = await sendForm(
+        data.phone,
+        `Предпочтительное время: ${getNextWork(
+          new Date()
+        ).toLocaleDateString()} в ${data.hour} часов ${data.minute} минут`
+      );
       if (res.ok) {
         setFocusedOnce({});
         setData({});
@@ -66,6 +74,40 @@ export const CallForm: React.FC = () => {
         type="tel"
         placeholder="Ваш номер телефона*"
       />
+      <div style={{ marginBottom: '22px' }} className={classes.time_pick_wrap}>
+        <div
+          style={{ display: 'flex', alignItems: 'center', marginRight: 'auto' }}
+        >
+          <p className={classes.text}>Перезвоним вам в</p>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <Select
+            onChange={(v) => setData({ hour: v })}
+            options={hours}
+            value={data.hour}
+          />
+          <div
+            style={{ margin: '0 16px', display: 'flex', alignItems: 'center' }}
+            className={classes.text}
+          >
+            <svg
+              width="4"
+              height="15"
+              viewBox="0 0 4 15"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="2" cy="13" r="2" fill="white" />
+              <circle cx="2" cy="2" r="2" fill="white" />
+            </svg>
+          </div>
+          <Select
+            onChange={(v) => setData({ minute: v })}
+            options={minutes}
+            value={data.minute}
+          />
+        </div>
+      </div>
       <p style={{ marginBottom: '14px' }} className={classes.text}>
         Мы можем позвонить {nextWordDay.getDate()}.
         {pad(nextWordDay.getMonth() + 1, 2)} c 9:00 до 19:55
@@ -122,4 +164,8 @@ function getNextWork(d: Date) {
 function pad(num, size) {
   const s = `000000000${num}`;
   return s.substr(s.length - size);
+}
+
+function generate(count: number, shift = 0) {
+  return new Array(count).fill(null).map((e, i) => pad(i + shift, 2));
 }

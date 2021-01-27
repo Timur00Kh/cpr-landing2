@@ -1,0 +1,63 @@
+.select {
+  position: relative;
+  display: block;
+  width: unset;
+}
+
+@mixin btn {
+  height: 48px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 32px;
+  color: #ffffff;
+}
+
+.select_btn {
+  background: linear-gradient(265.33deg, #8e4de1 0%, #4d5ce1 100%);
+  box-shadow: 0 8px 20px rgba(118, 52, 255, 0.48);
+  @include btn;
+
+  &:after {
+    content: ' ';
+    display: block;
+    background-image: url('./arrow.svg');
+    height: 11px;
+    width: 18px;
+    margin-left: 16px;
+  }
+}
+
+.options {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  z-index: 10;
+  background: linear-gradient(265.33deg, #8e4de1 0%, #4d5ce1 100%);
+
+  max-height: 300px;
+  overflow: auto;
+  animation: fadein 0.3s ease;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.option {
+  @include btn;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
