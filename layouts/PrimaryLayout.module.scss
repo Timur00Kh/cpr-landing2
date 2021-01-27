@@ -4,3 +4,33 @@
   padding: 0 16px;
   margin: auto;
 }
+
+.success_inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+}
+
+.success_form {
+  max-width: 480px;
+  width: 100%;
+  background: #030303;
+  border: 6px solid #8e4de1;
+  box-sizing: border-box;
+  padding: 26px 32px;
+}
+
+.success_form_header {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 40px;
+  /* identical to box height, or 133% */
+
+  /* White */
+
+  color: #ffffff;
+}

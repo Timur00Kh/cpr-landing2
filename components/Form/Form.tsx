@@ -1,9 +1,16 @@
 import { Input } from '@/components/Input/Input';
 import { Button } from '@/components/Button/Button';
-import React, { useCallback, useEffect, useReducer, useState } from 'react';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useReducer,
+  useState
+} from 'react';
 import cn from 'classnames';
 import { Checkbox } from '@/components/Checkbox/Checkbox';
 import classes from './Form.module.scss';
+import { ModalContext } from '@/layouts/PrimaryLayout';
 
 let tempId = 0;
 
@@ -42,13 +49,15 @@ export const Form: React.FC<Props> = ({ style, className }) => {
     setId(tempId);
   }, []);
 
+  const [, setModal] = useContext(ModalContext);
+
   const onClick = useCallback(async () => {
     if (formData.agree && formData.name && formData.phone && formData.email) {
       const res = await sendForm(formData.name, formData.email, formData.phone);
       if (res.ok) {
-        alert('Заявка отправлена');
         setFocusedOnce({});
         setFormData({});
+        setModal({ success: true, orderProj: false });
       } else {
         alert(`Ошибка!`);
       }
