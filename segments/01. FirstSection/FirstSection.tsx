@@ -46,7 +46,7 @@ export const FirstSection: React.FC = () => {
       <div className={classes.header_wrap}>
         {' '}
         <h1>
-          прокачайте свой бизнес с помощью виртуальной и дополненной реальности
+          Антикризисное предложение! Приложение ar/vr от 99000 рублей
         </h1>
         <div className={classes.header_icons}>
           <div>
